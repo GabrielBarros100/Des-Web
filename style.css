@@ -1,0 +1,235 @@
+/* Variáveis de cor e reset */
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-light: #ffffff;
+  --text-dark: #333333;
+  --text-light: #f4f4f4;
+  --accent: #888888;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Cabeçalho e Navegação */
+header {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--accent);
+}
+
+.logo-container img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Estrutura Principal */
+main {
+  flex: 1;
+  padding: 2rem 5%;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  margin-top: 1rem;
+}
+
+/* Carrossel de Produtos */
+.carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--bg-dark);
+  border-radius: 8px;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 10;
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+.carousel-btn:hover { background-color: black; }
+
+/* Formulário de Contato */
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--accent);
+}
+
+.features-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  flex: 1;
+  min-width: 250px;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.feature-card h3 {
+  margin-bottom: 1rem;
+  color: var(--bg-dark);
+}
+
+/* Call to Action (Chamada para Ação) */
+.cta-section {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-top: 4rem;
+  border-radius: 8px;
+}
+
+.cta-section h2 {
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--text-light);
+  color: var(--bg-dark);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--accent);
+  color: var(--text-light);
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 4rem; /* Alterado para afastar um pouco mais do conteúdo */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav ul {
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
